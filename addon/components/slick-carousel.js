@@ -10,9 +10,9 @@ export default Ember.Component.extend(Ember.Evented, {
   autoplaySpeed: 3000,
   arrows: true,
   asNavFor: null,
-  appendArrows: Ember.$(),
-  prevArrow: Ember.$('<button type="button" class="slick-prev">Previous</button>'),
-  nextArrow: Ember.$('<button type="button" class="slick-next">Next</button>'),
+  appendArrows: null,
+  prevArrow: null,
+  nextArrow: null,
   centerMode: false,
   centerPadding: '50px',
   cssEase: 'ease',
@@ -49,7 +49,6 @@ export default Ember.Component.extend(Ember.Evented, {
 
   /* Addon initializers */
     didInsertElement: function() {
-
       this.$().slick({
         accessibility: this.get('accessibility'),
         adaptiveHeight: this.get('adaptiveHeight'),
